@@ -128,7 +128,7 @@ doPerm <- function(perm, X, Y, absolute, abs_method){
 }
 
 #main function
-CIBERSORT <- function(sig_matrix, mixture_file, perm=0, QN=TRUE, absolute=FALSE, abs_method='sig.score'){
+CIBERSORT <- function(mixture_file, outfile="CIBERSORT-Results.txt", sig_matrix="https://raw.githubusercontent.com/cpdong/mySource/master/cibersort/LM22.txt", perm=1000, QN=TRUE, absolute=FALSE, abs_method='sig.score'){
     
     if(absolute && abs_method != 'no.sumto1' && abs_method != 'sig.score') stop("abs_method must be set to either 'sig.score' or 'no.sumto1'")
     
@@ -224,7 +224,7 @@ CIBERSORT <- function(sig_matrix, mixture_file, perm=0, QN=TRUE, absolute=FALSE,
     }
 
     #save results
-    write.table(rbind(header,output), file="CIBERSORT-Results.txt", sep="\t", row.names=F, col.names=F, quote=F)
+    write.table(rbind(header,output), file=outfile, sep="\t", row.names=F, col.names=F, quote=F)
     
     #return matrix object containing all results
     obj <- rbind(header,output)
