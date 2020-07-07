@@ -128,7 +128,7 @@ doPerm <- function(perm, X, Y, absolute, abs_method){
 }
 
 #main function
-CIBERSORT <- function(mixture_file, outfile="CIBERSORT-Results.txt", sig_matrix="https://raw.githubusercontent.com/cpdong/mySource/master/cibersort/LM22.txt", perm=1000, QN=TRUE, absolute=FALSE, abs_method='sig.score'){
+CIBERSORT <- function(mixture_file, outfile="CIBERSORT-Results.txt", sig_matrix="https://raw.githubusercontent.com/cpdong/mySource/master/deconvolution/cibersort/LM22.txt", perm=1000, QN=TRUE, absolute=FALSE, abs_method='sig.score'){
     
     if(absolute && abs_method != 'no.sumto1' && abs_method != 'sig.score') stop("abs_method must be set to either 'sig.score' or 'no.sumto1'")
     
@@ -236,3 +236,4 @@ CIBERSORT <- function(mixture_file, outfile="CIBERSORT-Results.txt", sig_matrix=
     else{colnames(obj) <- c(colnames(X),"P-value","Correlation","RMSE",paste('Absolute score (',abs_method,')',sep=""))}
     obj
 }
+#
