@@ -1,5 +1,5 @@
 dir="C:\\Users\\Chuanpeng\\Desktop\\ttt"
-pre_file="IUBiobank_95RNAseq_salmon1.2.1_tximport_gene_tpm_matrix.txt"
+pre_file="95RNAseq_salmon1.2.1_tximport_gene_tpm_matrix.txt"
 out_file="95RNAseq_tpm_xCell_input.txt"
 #profile_id='geneid';# geneid=Ensembl ID,geneSymbol=geneSymbol, entrezid=entrezgene_id
 #
