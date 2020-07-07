@@ -4,7 +4,7 @@ out_file="TCGA_BRCA_tpm_547_LM22_gene.txt"
 #profile_id='geneid';# geneid=Ensembl ID,geneSymbol=geneSymbol, entrezid=entrezgene_id
 #
 setwd(dir)
-data<- read.table(pre_file, header=T, sep='\t', row.names=1, stringsAsFactors=FALSE)
+data<- read.csv(pre_file, header=T, sep='\t', row.names=1, stringsAsFactors=FALSE)
 rownames(data)<- substr(rownames(data),0,15)
 id<- read.table("https://raw.githubusercontent.com/cpdong/mySource/master/cibersort/LM22_ID_table.txt", header=T, sep='\t', stringsAsFactors=FALSE)
 data1<- data[which(rownames(data) %in% id$geneid),]
