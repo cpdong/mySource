@@ -21,5 +21,5 @@ d1<- read.csv("TCGA_PAAD_salmon1.2.1_tximport_gene_tpm_matrix.txt", header=T, se
 exprs_file<- ensg2symbol_matrix(d1)
 sampleID<- rownames(exprs_file)
 data<- cbind(sampleID, exprs_file)
-write.table(data, "TCGA_PAAD_cibersort_profile.txt", sep='\t', row.names=F)
+write.table(data, "TCGA_PAAD_cibersort_profile.txt", sep='\t', row.names=F, quote=F)
 #
