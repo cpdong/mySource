@@ -8,3 +8,8 @@ colnames(df)<- substr(colnames(df), 0,15)
 
 resultS<- MCPcounter.estimate(df, featuresType=c("affy133P2_probesets","HUGO_symbols","ENTREZ_ID","ENSEMBL_ID")[4])
 result<- t(resultS)
+sample<- rownames(result)
+data<- cbind(sample, result)
+
+wrtie.csv(data, "TCGA_BRCA_MCPcounter_Output.csv", row.names=F)
+#
